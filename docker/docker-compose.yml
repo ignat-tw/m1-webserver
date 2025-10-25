@@ -4,7 +4,7 @@ services:
     container_name: sites_nginx
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8088:8080"
+      - "8088:8080"
     volumes:
       # DO NOT mount nginx.conf anymore
       - ../config/nginx/conf.d:/etc/nginx/conf.d:ro
