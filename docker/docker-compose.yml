@@ -10,3 +10,10 @@ services:
       - ../config/nginx/conf.d:/etc/nginx/conf.d:ro
       - ../config/nginx/snippets:/etc/nginx/snippets:ro
       - ../data/sites:/srv/sites:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"      # cap to half a CPU
+          memory: 256M      # plenty for static sites
+        reservations:
+          memory: 64M
